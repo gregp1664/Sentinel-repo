@@ -16,7 +16,7 @@ steps:
     azureResourceManagerConnection: 'Sentinel-conn'
     subscriptionId: '77766f65-372b-4ad3-a148-038506dd85b7'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'Sentinel-rg'
+    resourceGroupName: 'sentinel-rg'
     location: 'UK South'
     templateLocation: 'Linked artifact'
     csmFile: 'CreateWebApp/azuredeploy.json'
