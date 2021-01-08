@@ -19,8 +19,7 @@ steps:
     resourceGroupName: 'sentinel-rg'
     location: 'UK South'
     templateLocation: 'Linked artifact'
-    csmFile: 'CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName sentinel1 -linkedTemplateUri https://raw.githubusercontent.com/gregp1664/Sentinel-repo/main/CreateWebApp/linkedStorageAccount.json'
+    csmFile: 'CreateWebApp/logicapp-test1.json'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
     
