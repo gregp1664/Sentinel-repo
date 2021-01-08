@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Sentinel-conn'
+    subscriptionId: '77766f65-372b-4ad3-a148-038506dd85b7'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Home'
+    location: 'UK South'
+    templateLocation: 'Linked artifact'
+    csmFile: 'CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName Sentinel -linkedTemplateUri https://raw.githubusercontent.com/gregp1664/Sentinel-repo/main/CreateWebApp/linkedStorageAccount.json?token=ASMTURHNWEVS2TDBCUT7C5C77BF52'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
