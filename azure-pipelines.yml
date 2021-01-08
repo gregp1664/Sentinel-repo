@@ -20,10 +20,10 @@ steps:
     location: 'UK South'
     templateLocation: 'Linked artifact'
     csmFile: 'CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName Sentinel -linkedTemplateUri https://raw.githubusercontent.com/gregp1664/Sentinel-repo/main/CreateWebApp/linkedStorageAccount.json?token=ASMTURHNWEVS2TDBCUT7C5C77BF52'
+    overrideParameters: '-projectName Sentinel -linkedTemplateUri https://raw.githubusercontent.com/gregp1664/Sentinel-repo/main/CreateWebApp/linkedStorageAccount.json'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
-
+    
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
